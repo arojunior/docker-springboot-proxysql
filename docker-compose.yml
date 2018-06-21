@@ -1,0 +1,45 @@
+version: '3'
+services:
+
+  mysql_master_1:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile_master_1
+    ports:
+      - 3307:3307
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: upvotes
+    volumes:
+      - ./docker/data/mysql_master_1:/var/lib/mysql
+      - ./docker/logs/mysql_master_1:/var/log/mysql
+
+  mysql_master_2:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile_master_2
+    ports:
+      - 3308:3308
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: upvotes
+    volumes:
+      - ./docker/data/mysql_master_2:/var/lib/mysql
+      - ./docker/logs/mysql_master_2:/var/log/mysql
+
+  proxysql:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile_proxysql
+    ports:
+      - 3306:3306
+      - 6032:6032
+    environment:
+      CLUSTER_NAME: ProxySQL
+      DISCOVERY_SERVICE: 127.0.0.1:2379
+  # nginx:
+  #   image: nginx:latest
+  #   ports:
+  #     - 80:80
+  #   volumes:
+  #     - ./docker/logs/:/var/log/nginx
