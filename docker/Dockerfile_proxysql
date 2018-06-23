@@ -1,3 +1,0 @@
-FROM perconalab/proxysql:latest
-
-COPY ./config/proxysql.cnf /etc/proxysql.cnf
