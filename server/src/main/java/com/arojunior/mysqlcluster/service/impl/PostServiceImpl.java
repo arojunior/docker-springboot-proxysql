@@ -1,13 +1,12 @@
-package com.arojunior.upvotes.service.impl;
+package com.arojunior.mysqlcluster.service.impl;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.arojunior.upvotes.model.Post;
-import com.arojunior.upvotes.repository.PostRepository;
-import com.arojunior.upvotes.service.PostService;
+import com.arojunior.mysqlcluster.model.Post;
+import com.arojunior.mysqlcluster.repository.PostRepository;
+import com.arojunior.mysqlcluster.service.PostService;
 
 @Service
 public class PostServiceImpl implements PostService {
@@ -18,6 +17,5 @@ public class PostServiceImpl implements PostService {
 	@Override
 	public List<Post> findAll() {
 		return postRepository.findAll();
-	}
-
+	}	
 }

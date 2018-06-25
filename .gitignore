@@ -1,4 +1,2 @@
 /docker/data
 /docker/logs
-/server/bin
-.mvn

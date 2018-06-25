@@ -1,8 +1,8 @@
-package com.arojunior.upvotes.model.dto;
+package com.arojunior.mysqlcluster.model.dto;
 
 import java.util.Date;
 
-import com.arojunior.upvotes.model.Post;
+import com.arojunior.mysqlcluster.model.Post;
 
 public class PostDTO {
 
@@ -18,11 +18,7 @@ public class PostDTO {
 	
 	public String getContent() {
 		return post.getContent();
-	}
-	
-	public String getAuthor() {
-		return post.getAuthor().getName();
-	}
+	}		
 	
 	public Integer getLikes() {
 		return post.getLikes();

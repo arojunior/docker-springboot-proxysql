@@ -1,8 +1,10 @@
-package com.arojunior.upvotes.model;
+package com.arojunior.mysqlcluster.model;
 
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
@@ -10,9 +12,8 @@ import javax.persistence.ManyToOne;
 public class Post {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@ManyToOne(fetch = FetchType.LAZY)
-	private Author author;
 	private String content;
 	private Integer likes;
 	private Integer dislikes;
@@ -25,15 +26,7 @@ public class Post {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
-	public Author getAuthor() {
-		return author;
-	}
-	
-	public void setAuthor(Author author) {
-		this.author = author;
-	}
-	
+
 	public String getContent() {
 		return content;
 	}
