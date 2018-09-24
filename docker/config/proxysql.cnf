@@ -40,8 +40,8 @@ mysql_users =
 
 mysql_variables =
 {
-        interfaces="0.0.0.0:3306"
-        default_schema="information_schema"
-				monitor_username="root"
-				monitor_password="root"
+		interfaces="0.0.0.0:3306"
+		default_schema="information_schema"
+		monitor_username="root"
+		monitor_password="root"
 }

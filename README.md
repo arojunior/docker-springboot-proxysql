@@ -52,3 +52,6 @@ start slave;
 cd server
 ./mvnw test
 ```
+
+### ClusterControl admin interface
+http://localhost:8000/clustercontrol
