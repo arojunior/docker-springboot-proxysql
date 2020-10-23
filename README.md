@@ -7,12 +7,12 @@ You can test it starting the application and stopping one of the MySQL Server's,
 
 To start the proxy and database's:
 ```sh
-docker-compose up
+docker-compose up -d
 ```
 
 ### Steps to configure MySQL replication
 
-Go to **mysql_server_2**
+Go to **mysql_server_1**
 ```sh
 show master status;
 ```
@@ -29,7 +29,7 @@ start slave;
 
 * Change `master_log_file` and `master_log_pos` with previous result.
 
-Then go to **master_server_1** and repeat steps:
+Then go to **master_server_2** and repeat steps:
 
 ```sh
 show master status;
@@ -51,4 +51,10 @@ start slave;
 ```sh
 cd server
 ./mvnw test
+```
+
+With tests running, you can test the proxy stopping and starting the instances of MySQL
+
+```sh
+docker-compose stop mysql_master_1 
 ```

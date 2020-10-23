@@ -1,8 +1,8 @@
 package com.arojunior.mysqlcluster.model.dto;
 
-import java.util.Date;
-
 import com.arojunior.mysqlcluster.model.Post;
+
+import java.util.Date;
 
 public class PostDTO {
 

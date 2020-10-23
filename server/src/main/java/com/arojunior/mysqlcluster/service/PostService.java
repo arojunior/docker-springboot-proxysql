@@ -1,7 +1,8 @@
 package com.arojunior.mysqlcluster.service;
 
-import java.util.List;
 import com.arojunior.mysqlcluster.model.Post;
+
+import java.util.List;
 
 public interface PostService {
 	

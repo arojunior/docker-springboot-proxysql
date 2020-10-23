@@ -22,7 +22,7 @@ public class PostControllerTest {
 
 	@Test
 	@Repeat(10000)
-    public void postsListShouldReturnOK() throws Exception {		
+    public void postsListShouldReturnOK() {
 		restTemplate.getForEntity("http://localhost:" + port + "/v1/posts", String.class);			        
     }
 }
